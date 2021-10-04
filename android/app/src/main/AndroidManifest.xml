@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sabaiagro.product.sabai_agro_product_app">
    <application
-        android:label="sabai_agro_product_app"
+        android:label="Sabai Agro"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
