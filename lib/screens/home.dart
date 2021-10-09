@@ -10,8 +10,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Widget showLogo() {
     return Container(
-      width: 120.0,
-      height: 120.0,
+      width: 150.0,
+      height: 150.0,
       child: Image.asset('images/logo.png'),
     );
   }
@@ -21,19 +21,98 @@ class _HomeState extends State<Home> {
       'SABAI AGRO BUSINESS & INNOVATION COMPANY LIMITED',
       style: TextStyle(
           fontSize: 10.0,
-          color: Colors.blue.shade700,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal),
     );
   }
+
   Widget showThName() {
     return Text(
       'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
       style: TextStyle(
           fontSize: 10.0,
-          color: Colors.blue.shade700,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal),
+    );
+  }
+
+  Widget welcomeBotton() {
+    return ElevatedButton(onPressed: () {}, child: Text('WELCOME'));
+  }
+
+  Widget showButton() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[welcomeBotton()],
+    );
+  }
+
+  Widget showVision() {
+    return Text(
+      'WE WILL GROW TOGETHER',
+      style: TextStyle(
+          fontSize: 15.0,
+          color: Colors.white,
+          fontWeight: FontWeight.normal,
+          fontStyle: FontStyle.normal),
+    );
+  }
+
+  Widget iconEmail() {
+    return Icon(Icons.email);
+  }
+
+  Widget showEmail() {
+    return Text(
+      'sabai.sabai1965@gmail.com',
+      style: TextStyle(
+          fontSize: 15.0,
+          color: Colors.white,
+          fontWeight: FontWeight.normal,
+          fontStyle: FontStyle.normal),
+    );
+  }
+
+  Widget emailTab() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        iconEmail(),
+        SizedBox(
+          width: 4.0,
+        ),
+        showEmail()
+      ],
+    );
+  }
+
+  Widget iconLine() {
+    return Icon(Icons.line_style);
+  }
+
+  Widget showLine() {
+    return Text(
+      '@sabai.sabai1965',
+      style: TextStyle(
+          fontSize: 15.0,
+          color: Co,
+          fontWeight: FontWeight.normal,
+          fontStyle: FontStyle.normal),
+    );
+  }
+
+  Widget lineTab() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        iconLine(),
+        SizedBox(
+          width: 4.0,
+        ),
+        showLine()
+      ],
     );
   }
 
@@ -41,11 +120,28 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[showLogo(), showEngName(), showThName()]),
+        child: Container(
+          decoration: BoxDecoration(color: Colors.blue.shade400
+          ),
+          child: Center(
+          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            showLogo(),
+            SizedBox(height: 30.0),
+            showEngName(),
+            SizedBox(height: 15.0),
+            showThName(),
+            SizedBox(height: 15.0),
+            showButton(),
+            SizedBox(height: 10.0),
+            showVision(),
+            SizedBox(height: 10.0),
+            emailTab(),
+            SizedBox(height: 10.0),
+            lineTab(),
+            SizedBox(height: 10.0)
+          ]),
         ),
+        )
       ),
     );
   }
