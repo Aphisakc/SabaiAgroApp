@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
       '@sabai.sabai1965',
       style: TextStyle(
           fontSize: 15.0,
-          color: Co,
+          color: Colors.white,
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal),
     );
