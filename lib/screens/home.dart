@@ -61,14 +61,14 @@ class _HomeState extends State<Home> {
   }
 
   Widget iconEmail() {
-    return Icon(Icons.email);
+    return Icon(Icons.email, color: Colors.white, size: 10.0);
   }
 
   Widget showEmail() {
     return Text(
       'sabai.sabai1965@gmail.com',
       style: TextStyle(
-          fontSize: 15.0,
+          fontSize: 10.0,
           color: Colors.white,
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal),
@@ -89,14 +89,14 @@ class _HomeState extends State<Home> {
   }
 
   Widget iconLine() {
-    return Icon(Icons.line_style);
+    return Icon(Icons.assignment_ind, color: Colors.white, size: 10.0);
   }
 
   Widget showLine() {
     return Text(
       '@sabai.sabai1965',
       style: TextStyle(
-          fontSize: 15.0,
+          fontSize: 10.0,
           color: Colors.white,
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal),
@@ -120,10 +120,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          decoration: BoxDecoration(color: Colors.blue.shade400
-          ),
-          child: Center(
+          child: Container(
+        decoration: BoxDecoration(color: Colors.blue.shade400),
+        child: Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
             showLogo(),
             SizedBox(height: 30.0),
@@ -141,8 +140,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 10.0)
           ]),
         ),
-        )
-      ),
+      )),
     );
   }
 }
