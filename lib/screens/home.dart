@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sabai_agro_product_app/screens/index.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
     return Text(
       'SABAI AGRO BUSINESS & INNOVATION COMPANY LIMITED',
       style: TextStyle(
-          fontSize: 12.0,
+          fontSize: 10.0,
           color: Colors.white,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal),
@@ -32,21 +33,40 @@ class _HomeState extends State<Home> {
     return Text(
       'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
       style: TextStyle(
-          fontSize: 12.0,
+          fontSize: 10.0,
           color: Colors.white,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal),
     );
   }
 
-  Widget welcomeBotton() {
-    return ElevatedButton(onPressed: () {}, child: Text('WELCOME'));
-  }
-
   Widget showButton() {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[welcomeBotton()],
+    Size size = MediaQuery.of(context).size;
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Index()),
+        );
+      },
+      child: Container(
+        height: size.height * 0.06,
+        width: size.width * 0.50,
+        decoration: BoxDecoration(
+            color: Colors.redAccent,
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            )),
+        child: Center(
+          child: Text(
+            'WELCOME',
+            style: TextStyle(
+                fontSize: 12.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
     );
   }
 
@@ -54,7 +74,7 @@ class _HomeState extends State<Home> {
     return Text(
       'WE WILL GROW TOGETHER',
       style: TextStyle(
-          fontSize: 15.0,
+          fontSize: 12.0,
           color: Colors.white,
           fontWeight: FontWeight.normal,
           fontStyle: FontStyle.normal),
@@ -120,38 +140,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea (
-        child: Container(
-          decoration: BoxDecoration(color: Colors.blue.shade400),
-          child: Center(
-            child: Column(mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  showLogo(),
-                  SizedBox(height: 30.0),
-                  showEngName(),
-                  SizedBox(height: 15.0),
-                  showThName(),
-                  SizedBox(height: 30.0),
-                  showButton(),
-                  SizedBox(height: 30.0),
-                  showVision(),
-                  SizedBox(height: 50.0),
-                  Padding(
-                    padding: const EdgeInsets.only(right:20.0),
-                    child: emailTab(),
-                  ),
-                  SizedBox(height: 10.0),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 67.0),
-                    child: lineTab(),
-                  ),
-                  SizedBox(height: 10.0)
-
-                ]),
-          ),
+        body: SafeArea(
+      child: Container(
+        decoration: BoxDecoration(color: Colors.blue.shade400),
+        child: Center(
+          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            showLogo(),
+            SizedBox(height: 30.0),
+            showEngName(),
+            SizedBox(height: 15.0),
+            showThName(),
+            SizedBox(height: 30.0),
+            showButton(),
+            SizedBox(height: 30.0),
+            showVision(),
+            SizedBox(height: 50.0),
+            Padding(
+              padding: const EdgeInsets.only(right: 50.0),
+              child: emailTab(),
+            ),
+            SizedBox(height: 10.0),
+            Padding(
+              padding: const EdgeInsets.only(right: 97.0),
+              child: lineTab(),
+            ),
+            SizedBox(height: 10.0)
+          ]),
         ),
-      )
-
-    );
+      ),
+    ));
   }
 }
