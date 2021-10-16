@@ -24,44 +24,46 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
         .map((item) => Container(
               child: ClipRRect(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
+                  Radius.circular(10.0),
                 ),
                 child: Stack(
                   children: [
                     Image.network(
                       item,
-                      fit: BoxFit.cover,
-                      width: 1000,
+                      // fit: BoxFit.cover,
+                      height: 200,
+                      width: 200,
                     ),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0),
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
-                        child: Text(
-                          'No. ${widget.imgList.indexOf(item)} image',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Positioned(
+                    //   bottom: 0.0,
+                    //   left: 0.0,
+                    //   right: 0.0,
+                    //   top: 0.0,
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //       gradient: LinearGradient(
+                    //         colors: [
+                    //           Color.fromARGB(200, 0, 0, 0),
+                    //           Color.fromARGB(0, 0, 0, 0),
+                    //         ],
+                    //         begin: Alignment.topCenter,
+                    //         // end: Alignment.center,
+                    //       ),
+                    //     ),
+                    //     padding: EdgeInsets.symmetric(
+                    //       horizontal: 20,
+                    //       vertical: 4,
+                    //     ),
+                    //     // child: Text(
+                    //     //   'No. ${widget.imgList.indexOf(item)} image',
+                    //     //   style: TextStyle(
+                    //     //     color: Colors.white,
+                    //     //     fontSize: 20.0,
+                    //     //     fontWeight: FontWeight.bold,
+                    //     //   ),
+                    //     // ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -101,7 +103,7 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
               width: 8,
               height: 8,
               margin: EdgeInsets.symmetric(
-                vertical: 10,
+                vertical: 0,
                 horizontal: 3,
               ),
               decoration: BoxDecoration(

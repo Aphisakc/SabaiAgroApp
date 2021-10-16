@@ -155,12 +155,27 @@ class _IndexState extends State<Index> {
             child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
               headRow(),
               CarouselWithDotsPage(),
+              SizedBox(height: 30.0),
               midRow(),
               IconKey(),
             ]),
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          unselectedIconTheme: IconThemeData(color: Colors.grey[400]),
+          selectedIconTheme: IconThemeData(color: Colors.black),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.tty_rounded), label: 'โปรแกรมคำนวณ'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.play_circle), label: 'โรคสัตว์น้ำ'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.thumb_up_rounded),
+                label: 'กลุ่มสินค้า Sab@i Agro'),
+          ]),
     );
   }
 }
