@@ -124,17 +124,14 @@ class HomeReal extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.60,
-            decoration: BoxDecoration(color: Colors.grey),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  sumTextVision(),
-                ],
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [sumTextVision(), sumTextCo(), sumTextTarget()],
+                ),
               ),
             ),
           )
@@ -144,38 +141,112 @@ class HomeReal extends StatelessWidget {
   }
 }
 
-Widget showButtonVision() {
-  return ElevatedButton(
-    onPressed: () => print('CLick Event'),
+Widget showVision() {
+  return Text(
+    'วิสัยทัศน์',
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+  );
+}
+
+Widget showTextVision() {
+  return Text(
+    'เป็นบริษัทธรรมาภิบาลทางการเกษตรชั้นนำของไทย ที่ประกอบด้วยบุคลากรที่เป็นคนดีคนเก่ง มีความมุ่งมั่นใส่ใจ และอุทิศตนในการส่งมอบปัจจัยการผลิตสู่พี่น้องเกษตรกร บนรากฐานของผลิตภัณฑ์ที่มีคุณภาพและนวัตกรรมระดับโลกรวมทั้งการให้การบริการทางวิชาการ',
+    style: TextStyle(fontSize: 15, color: Colors.black),
+  );
+}
+
+Widget sumTextVision() {
+  return SizedBox(
     child: Container(
-      height: 30,
-      width: 70,
-      decoration: BoxDecoration(
-          color: Colors.redAccent,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          )),
-      child: Center(
-        child: Text(
-          'วิสัยทัศน์',
-          style: TextStyle(
-              fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              showVision(),
+              showTextVision(),
+            ]),
+      ),
+    ),
+  );
+}
+
+Widget showCo() {
+  return Text(
+    'พันธะกิจ',
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+  );
+}
+
+Widget showTextCo() {
+  return Text(
+    'เรามุ่งมั่น ตั้งใจ และใส่ใจ ในการทำงาน เพื่อให้เกษตรกรไทยสามารถพัฒนาผลผลิตและผลกำไรให้มากขึ้น สามารถอยู่รอด เข้มเเข็งได้มากขึ้น และเจริญรุ่งเรืองได้อย่างยั่งยืน เพราะเรามีความเชื่อว่า ความเจริญรุ่งเรืองอย่างยั่งยืนของเกษตรกร คือความเจริญรุ่งเรืองของบริษัท สบาย อะโกร เช่นกัน',
+    style: TextStyle(fontSize: 15, color: Colors.black),
+  );
+}
+
+Widget sumTextCo() {
+  return SizedBox(
+    child: Container(
+      color: Colors.blue[50],
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              showCo(),
+              showTextCo(),
+            ]),
+      ),
+    ),
+  );
+}
+
+Widget showTarget() {
+  return Text(
+    'เป้าหมายของบริษัท',
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+  );
+}
+
+Widget showTextTarget() {
+  return Text(
+    '1. เพื่อการพัฒนาผลผลิตและผลกำไรของเกษตรกรอย่างยั่งยืน\n2. เพื่อการพัฒนาผลประกอบการที่มีผลกำไร อย่างยั่งยืน\n\n เพราะความสำเร็จอย่างยั่งยืนของเกษตรกร คือ ความสำเร็จอย่างยั่งยืนของบริษัท สบาย อะโกร ด้วยเช่นกัน',
+    style: TextStyle(fontSize: 15, color: Colors.black),
+  );
+}
+
+Widget sumTextTarget() {
+  return SizedBox(
+    child: Container(
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  showTarget(),
+                  showTextTarget(),
+                ]),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [bossPic()],
+            )
+          ],
         ),
       ),
     ),
   );
 }
 
-Widget showTextVision() {
-  return Text(
-      'เป็นบริษัทธรรมาภิบาลทางการเกษตรชั้นนำของประเทศไทย ที่ประกอบไปด้วย...');
-}
-
-Widget sumTextVision() {
-  return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        showButtonVision(),
-        showTextVision(),
-      ]);
+Widget bossPic() {
+  return Container(
+    width: 200.0,
+    height: 200.0,
+    child: Image.asset('images/boss1.png'),
+  );
 }
